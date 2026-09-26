@@ -74,6 +74,68 @@
       color: #000;
     }
 
+    /* =========================
+       LANZAMIENTO OJOS BELLOS
+       ========================= */
+
+    .lanzamiento {
+      max-width: 700px;
+      margin: 20px auto 50px;
+      padding: 50px 25px;
+      border-top: 1px solid #d4af37;
+      border-bottom: 1px solid #d4af37;
+      text-align: center;
+    }
+
+    .lanzamiento-label {
+      color: #d4af37;
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .lanzamiento h2 {
+      font-size: 38px;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
+    }
+
+    .portada-lanzamiento {
+      width: min(420px, 90%);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 30px;
+      border: 2px solid #d4af37;
+      box-shadow:
+        0 0 15px rgba(212, 175, 55, 0.25),
+        0 0 40px rgba(212, 175, 55, 0.12);
+    }
+
+    .lanzamiento-status {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1px solid #d4af37;
+      border-radius: 5px;
+      color: #d4af37;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .lanzamiento-texto {
+      color: #cccccc;
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 550px;
+      margin: auto;
+    }
+
+    /* =========================
+       MI MÚSICA
+       ========================= */
+
     .canciones-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -129,34 +191,6 @@
       color: #000;
     }
 
-    /* LANZAMIENTO PRINCIPAL - OJOS BELLOS */
-    .lanzamiento-principal {
-      border: 2px solid #d4af37;
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
-      transform: scale(1.02);
-    }
-
-    .lanzamiento-principal img {
-      height: 280px;
-    }
-
-    .lanzamiento-principal h3 {
-      color: #d4af37;
-      font-size: 25px;
-      letter-spacing: 1px;
-    }
-
-    .proximamente {
-      display: inline-block;
-      margin-top: 5px;
-      padding: 12px 20px;
-      border: 1px solid #d4af37;
-      border-radius: 5px;
-      color: #d4af37;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
     footer {
       padding: 30px 20px;
       border-top: 1px solid #222;
@@ -170,11 +204,14 @@
 
   <header>
     <h1>METAMORFOSIS</h1>
-    <div class="artist">ARTISTA URBANO · RAP · TRAP · REGGAE · REGUETÓN</div>
+    <div class="artist">
+      ARTISTA URBANO · RAP · TRAP · REGGAE · REGUETÓN
+    </div>
   </header>
 
   <section>
     <h2>Bienvenido</h2>
+
     <p>
       Bienvenido al espacio oficial de Metamorfosis.
       Música, historias y experiencias convertidas en arte.
@@ -184,6 +221,7 @@
 
   <section>
     <h2>Sobre Metamorfosis</h2>
+
     <p>
       Metamorfosis es un artista que utiliza la música como una forma
       de expresar experiencias, sentimientos y situaciones de la vida.
@@ -191,134 +229,213 @@
     </p>
   </section>
 
+
+  <!-- =========================
+       NUEVO LANZAMIENTO
+       ========================= -->
+
+  <section class="lanzamiento">
+
+    <div class="lanzamiento-label">
+      🔥 NUEVO LANZAMIENTO
+    </div>
+
+    <h2>OJOS BELLOS</h2>
+
+    <img
+      src="ojos-bellos.jpeg"
+      alt="Portada Ojos bellos"
+      class="portada-lanzamiento"
+    >
+
+    <div class="lanzamiento-status">
+      PRÓXIMAMENTE
+    </div>
+
+    <p class="lanzamiento-texto">
+      Escúchalo próximamente en Spotify y en las principales
+      plataformas digitales.
+    </p>
+
+  </section>
+
+
+  <!-- =========================
+       MI MÚSICA
+       ========================= -->
+
   <section id="musica">
+
     <h2>Mi Música</h2>
 
     <div class="canciones-grid">
 
-      <!-- OJOS BELLOS - LANZAMIENTO PRINCIPAL -->
-      <div class="cancion-card lanzamiento-principal">
-        <img src="ojos-bellos.jpeg" alt="Ojos bellos">
-
-        <div class="cancion-info">
-          <h3>OJOS BELLOS</h3>
-
-          <p class="feat">🔥 NUEVO LANZAMIENTO</p>
-
-          <span class="proximamente">PRÓXIMAMENTE</span>
-
-          <p style="margin-top: 15px; font-size: 14px;">
-            Disponible próximamente en Spotify y plataformas digitales.
-          </p>
-        </div>
-      </div>
-
       <!-- STREETS - METAMORFOSIS ft MHÜS -->
       <div class="cancion-card">
-        <img src="file_00000000a44471f5a90b00030674ca54.png" alt="Streets - Metamorfosis ft MHÜS">
+
+        <img
+          src="file_00000000a44471f5a90b00030674ca54.png"
+          alt="Streets - Metamorfosis ft MHÜS"
+        >
 
         <div class="cancion-info">
           <h3>Streets</h3>
           <p class="feat">ft. MHÜS</p>
 
-          <a href="https://open.spotify.com/track/7F0GvYyz1vtVBv5LfRuD8B"
-             class="btn-escuchar"
-             target="_blank">
+          <a
+            href="https://open.spotify.com/track/7F0GvYyz1vtVBv5LfRuD8B"
+            class="btn-escuchar"
+            target="_blank"
+          >
             Escuchar
           </a>
         </div>
+
       </div>
+
 
       <!-- MELANCOLÍA -->
       <div class="cancion-card">
-        <img src="20250213_125116_661.jpg" alt="Melancolía">
+
+        <img
+          src="20250213_125116_661.jpg"
+          alt="Melancolía"
+        >
 
         <div class="cancion-info">
           <h3>Melancolía</h3>
           <p class="feat">Single</p>
 
-          <a href="https://open.spotify.com/track/598Wp5o75WhZYg8AcblgcO"
-             class="btn-escuchar"
-             target="_blank">
+          <a
+            href="https://open.spotify.com/track/598Wp5o75WhZYg8AcblgcO"
+            class="btn-escuchar"
+            target="_blank"
+          >
             Escuchar
           </a>
         </div>
+
       </div>
+
 
       <!-- APROVECHA TU PARTIDA -->
       <div class="cancion-card">
-        <img src="20240919_155854_983.jpg" alt="Aprovecha tu partida">
+
+        <img
+          src="20240919_155854_983.jpg"
+          alt="Aprovecha tu partida"
+        >
 
         <div class="cancion-info">
           <h3>Aprovecha tu partida</h3>
           <p class="feat">Single</p>
 
-          <a href="https://open.spotify.com/track/0a5YIKEQbeSIiXy1mdbxfS"
-             class="btn-escuchar"
-             target="_blank">
+          <a
+            href="https://open.spotify.com/track/0a5YIKEQbeSIiXy1mdbxfS"
+            class="btn-escuchar"
+            target="_blank"
+          >
             Escuchar
           </a>
         </div>
+
       </div>
+
 
       <!-- SIN CASCO -->
       <div class="cancion-card">
-        <img src="20240822_225049_287.jpg" alt="Sin Casco">
+
+        <img
+          src="20240822_225049_287.jpg"
+          alt="Sin Casco"
+        >
 
         <div class="cancion-info">
           <h3>Sin Casco</h3>
           <p class="feat">Single</p>
 
-          <a href="https://open.spotify.com/track/75IzDd13WtRXxHhPQjuPK7"
-             class="btn-escuchar"
-             target="_blank">
+          <a
+            href="https://open.spotify.com/track/75IzDd13WtRXxHhPQjuPK7"
+            class="btn-escuchar"
+            target="_blank"
+          >
             Escuchar
           </a>
         </div>
+
       </div>
+
 
       <!-- NIÑOS ACELERADOS -->
       <div class="cancion-card">
-        <img src="20240523_162543_069.jpg" alt="Niños Acelerados">
+
+        <img
+          src="20240523_162543_069.jpg"
+          alt="Niños Acelerados"
+        >
 
         <div class="cancion-info">
           <h3>Niños Acelerados</h3>
           <p class="feat">Single</p>
 
-          <a href="https://open.spotify.com/track/7gQDoBBx5cG0HFbOCExFtX"
-             class="btn-escuchar"
-             target="_blank">
+          <a
+            href="https://open.spotify.com/track/7gQDoBBx5cG0HFbOCExFtX"
+            class="btn-escuchar"
+            target="_blank"
+          >
             Escuchar
           </a>
         </div>
+
       </div>
 
     </div>
+
   </section>
 
+
+  <!-- =========================
+       REDES SOCIALES
+       ========================= -->
+
   <section>
+
     <h2>📱 Sígueme</h2>
 
     <div class="buttons">
 
-      <a href="https://www.instagram.com/metamorfosis_1998/" target="_blank">
+      <a
+        href="https://www.instagram.com/metamorfosis_1998/"
+        target="_blank"
+      >
         📸 INSTAGRAM
       </a>
 
-      <a href="https://www.tiktok.com/@metamorfosis1998" target="_blank">
+      <a
+        href="https://www.tiktok.com/@metamorfosis1998"
+        target="_blank"
+      >
         🎵 TIKTOK
       </a>
 
-      <a href="https://www.facebook.com/share/1V2AJr9BsS/" target="_blank">
+      <a
+        href="https://www.facebook.com/share/1V2AJr9BsS/"
+        target="_blank"
+      >
         👍 FACEBOOK
       </a>
 
-      <a href="https://youtube.com/@metamorfosis1998" target="_blank">
+      <a
+        href="https://youtube.com/@metamorfosis1998"
+        target="_blank"
+      >
         ▶️ YOUTUBE
       </a>
 
     </div>
+
   </section>
+
 
   <footer>
     © 2026 Metamorfosis 1998 · Todos los derechos reservados.

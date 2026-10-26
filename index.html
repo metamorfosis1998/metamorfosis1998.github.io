@@ -1,996 +1,126 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Metamorfosis 1998 | Artista Urbano Oficial</title>
-
-  <meta name="description" content="Página oficial de Metamorfosis 1998. Rap conciencia, trap, reggae y reguetón. Escucha su música, descubre sus lanzamientos y síguelo en redes sociales.">
-  <meta name="theme-color" content="#080808">
-
-  <style>
-    :root {
-      --negro: #080808;
-      --negro-card: #111111;
-      --dorado: #d4af37;
-      --dorado-claro: #f2d675;
-      --blanco: #f5f5f5;
-      --gris: #b8b8b8;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 80px;
-    }
-
-    body {
-      background: var(--negro);
-      color: var(--blanco);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    /* FONDO GENERAL */
-
-    .fondo {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.40),
-          rgba(0, 0, 0, 0.90) 65%,
-          #080808
-        ),
-        url("file_00000000413081f595f3de990434c9a9.png")
-        center top / cover no-repeat;
-    }
-
-    .brillo {
-      position: fixed;
-      width: 320px;
-      height: 320px;
-      top: 100px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(212, 175, 55, 0.07);
-      filter: blur(100px);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    /* NAVEGACIÓN */
-
-    .navegacion {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(8, 8, 8, 0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
-      padding: 13px 12px;
-    }
-
-    .nav-contenido {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .navegacion a {
-      color: #ddd;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1.2px;
-      transition: color 0.25s;
-    }
-
-    .navegacion a:hover {
-      color: var(--dorado);
-    }
-
-    /* PORTADA PRINCIPAL */
-
-    header {
-      min-height: 590px;
-      padding: 100px 20px 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      background:
-        linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 0.18),
-          rgba(0, 0, 0, 0.48) 65%,
-          #080808
-        );
-      border-bottom: 1px solid rgba(212, 175, 55, 0.18);
-    }
-
-    .sobrelinea {
-      color: var(--dorado);
-      font-size: 12px;
-      letter-spacing: 5px;
-      font-weight: bold;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      font-size: clamp(39px, 8vw, 76px);
-      letter-spacing: clamp(3px, 1vw, 9px);
-      line-height: 1.12;
-      margin-bottom: 15px;
-      text-shadow: 0 4px 25px #000;
-    }
-
-    .numero {
-      color: var(--dorado);
-    }
-
-    .linea-dorada {
-      width: 90px;
-      height: 2px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--dorado),
-        transparent
-      );
-      margin: 20px auto;
-    }
-
-    .artist {
-      color: var(--dorado-claro);
-      font-size: clamp(11px, 2.5vw, 15px);
-      letter-spacing: 2.5px;
-      max-width: 700px;
-    }
-
-    .frase-portada {
-      margin-top: 25px;
-      max-width: 540px;
-      color: #ddd;
-      font-size: 16px;
-      font-style: italic;
-    }
-
-    .botones-portada {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 32px;
-    }
-
-    .boton {
-      display: inline-block;
-      padding: 14px 23px;
-      border: 1px solid var(--dorado);
-      border-radius: 3px;
-      color: var(--dorado);
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1.2px;
-      transition: 0.25s;
-    }
-
-    .boton:hover {
-      background: var(--dorado);
-      color: #000;
-      transform: translateY(-2px);
-    }
-
-    .boton-principal {
-      background: var(--dorado);
-      color: #080808;
-    }
-
-    .boton-principal:hover {
-      background: var(--dorado-claro);
-    }
-
-    /* SECCIONES */
-
-    section {
-      width: 100%;
-      max-width: 1100px;
-      padding: 75px 22px;
-      margin: auto;
-    }
-
-    .encabezado-seccion {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .etiqueta {
-      color: var(--dorado);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 4px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      color: var(--blanco);
-      font-size: clamp(27px, 5vw, 38px);
-      letter-spacing: 2px;
-      line-height: 1.25;
-    }
-
-    .subrayado {
-      width: 55px;
-      height: 2px;
-      background: var(--dorado);
-      margin: 17px auto 0;
-    }
-
-    .texto-centro {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
-      color: var(--gris);
-      font-size: 16px;
-      line-height: 1.9;
-    }
-
-    /* ESPACIO PARA RETRATO */
-
-    .perfil-contenedor {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      align-items: center;
-      gap: 42px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .espacio-foto {
-      width: 100%;
-      max-width: 340px;
-      aspect-ratio: 4 / 5;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 25px;
-      border: 1px solid rgba(212, 175, 55, 0.65);
-      background:
-        radial-gradient(
-          ellipse at center,
-          rgba(212, 175, 55, 0.09),
-          rgba(0, 0, 0, 0.92) 72%
-        );
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.07);
-      text-align: center;
-    }
-
-    .simbolo-foto {
-      font-size: 48px;
-      color: var(--dorado);
-      line-height: 1;
-    }
-
-    .espacio-foto strong {
-      color: var(--dorado);
-      font-size: 13px;
-      letter-spacing: 2px;
-    }
-
-    .espacio-foto span {
-      max-width: 230px;
-      color: #999;
-      font-size: 12px;
-    }
-
-    .perfil-texto h2 {
-      margin-bottom: 22px;
-    }
-
-    .perfil-texto p {
-      color: var(--gris);
-      margin-bottom: 16px;
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    /* NUEVO LANZAMIENTO */
-
-    .lanzamiento {
-      max-width: 850px;
-      padding: 45px 25px;
-      border: 1px solid rgba(212, 175, 55, 0.6);
-      background: linear-gradient(
-        135deg,
-        rgba(25, 22, 12, 0.95),
-        rgba(7, 7, 7, 0.97)
-      );
-      box-shadow: 0 0 40px rgba(212, 175, 55, 0.07);
-      text-align: center;
-    }
-
-    .lanzamiento-label {
-      color: var(--dorado);
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 4px;
-      margin-bottom: 12px;
-    }
-
-    .lanzamiento h2 {
-      color: var(--dorado-claro);
-      font-size: clamp(34px, 7vw, 52px);
-      letter-spacing: 5px;
-      margin-bottom: 28px;
-    }
-
-    .portada-lanzamiento {
-      width: min(100%, 390px);
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      margin: 0 auto 25px;
-      border: 1px solid var(--dorado);
-      box-shadow: 0 0 28px rgba(212, 175, 55, 0.16);
-    }
-
-    .lanzamiento-status {
-      display: inline-block;
-      padding: 9px 18px;
-      border: 1px solid var(--dorado);
-      color: var(--dorado);
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .lanzamiento-texto {
-      max-width: 550px;
-      margin: auto;
-      color: var(--gris);
-      font-size: 15px;
-      line-height: 1.8;
-    }
-
-    .spotify-lanzamiento {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 15px 25px;
-      background: var(--dorado);
-      color: #080808;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 12px;
-      letter-spacing: 1px;
-      transition: 0.25s;
-    }
-
-    .spotify-lanzamiento:hover {
-      background: var(--dorado-claro);
-      transform: translateY(-2px);
-    }
-
-    /* MÚSICA */
-
-    .canciones-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 35px;
-    }
-
-    .cancion-card {
-      background: rgba(15, 15, 15, 0.96);
-      border: 1px solid rgba(212, 175, 55, 0.32);
-      overflow: hidden;
-      text-align: left;
-      transition: transform 0.25s, border-color 0.25s;
-    }
-
-    .cancion-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--dorado);
-    }
-
-    .cancion-card img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      background: #171717;
-    }
-
-    .cancion-info {
-      padding: 20px 17px 22px;
-    }
-
-    .cancion-info h3 {
-      color: #fff;
-      font-size: 19px;
-      line-height: 1.4;
-      margin-bottom: 5px;
-    }
-
-    .feat {
-      color: var(--dorado);
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    .btn-escuchar {
-      display: inline-block;
-      padding: 10px 17px;
-      border: 1px solid var(--dorado);
-      color: var(--dorado);
-      text-decoration: none;
-      font-size: 11px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      transition: 0.25s;
-    }
-
-    .btn-escuchar:hover {
-      background: var(--dorado);
-      color: #000;
-    }
-
-    .nota-musica {
-      color: #999;
-      text-align: center;
-      font-size: 12px;
-      margin-top: 25px;
-    }
-
-    /* REDES */
-
-    .redes {
-      max-width: 850px;
-      text-align: center;
-      border-top: 1px solid rgba(212, 175, 55, 0.22);
-    }
-
-    .redes-texto {
-      max-width: 600px;
-      margin: 15px auto 25px;
-      color: var(--gris);
-      font-size: 15px;
-    }
-
-    .redes-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .red-social {
-      min-width: 135px;
-      padding: 14px 18px;
-      border: 1px solid #37322a;
-      background: rgba(15, 15, 15, 0.92);
-      color: #eee;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      transition: 0.25s;
-    }
-
-    .red-social:hover {
-      border-color: var(--dorado);
-      color: var(--dorado);
-      transform: translateY(-2px);
-    }
-
-    .spotify-artista {
-      margin-top: 25px;
-    }
-
-    /* PIE DE PÁGINA */
-
-    footer {
-      padding: 30px 20px;
-      border-top: 1px solid rgba(212, 175, 55, 0.25);
-      background: rgba(0, 0, 0, 0.8);
-      color: #888;
-      text-align: center;
-      font-size: 12px;
-    }
-
-    footer strong {
-      color: var(--dorado);
-      letter-spacing: 1px;
-    }
-
-    /* TELÉFONOS */
-
-    @media (max-width: 760px) {
-      .nav-contenido {
-        gap: 15px;
-      }
-
-      .navegacion a {
-        font-size: 10px;
-        letter-spacing: 0.8px;
-      }
-
-      header {
-        min-height: 520px;
-        padding: 75px 18px 65px;
-      }
-
-      .sobrelinea {
-        font-size: 10px;
-        letter-spacing: 3px;
-      }
-
-      .artist {
-        line-height: 1.9;
-      }
-
-      section {
-        padding: 58px 18px;
-      }
-
-      .perfil-contenedor {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .espacio-foto {
-        max-width: 290px;
-      }
-
-      .perfil-texto {
-        text-align: center;
-      }
-
-      .canciones-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 13px;
-      }
-
-      .cancion-info {
-        padding: 14px 12px 17px;
-      }
-
-      .cancion-info h3 {
-        font-size: 16px;
-      }
-
-      .feat {
-        font-size: 12px;
-      }
-
-      .btn-escuchar {
-        padding: 10px 12px;
-      }
-
-      .lanzamiento {
-        width: calc(100% - 28px);
-        padding: 35px 17px;
-      }
-
-      .red-social {
-        min-width: 125px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .canciones-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cancion-card {
-        max-width: 320px;
-        width: 100%;
-        margin: auto;
-      }
-
-      .cancion-info h3 {
-        font-size: 19px;
-      }
-
-      .nav-contenido {
-        gap: 11px;
-      }
-
-      .navegacion a {
-        font-size: 9px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metamorfosis | Artista Urbano Oficial</title>
+<meta name="description" content="Página oficial de Metamorfosis. Rap conciencia, trap, reggae y reguetón.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--negro:#080808;--dorado:#D4AF37;--dorado2:#F2D675;--gris:#b8b8b8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080808;color:#f5f5f5;font-family:'Inter',sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:50;background:rgba(8,8,8,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,175,55,.3);display:flex;justify-content:space-between;align-items:center;padding:14px 28px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{width:44px;height:44px;object-fit:contain;filter:drop-shadow(0 0 6px rgba(212,175,55,.4))}
+.logo b{font-family:'Cinzel',serif;color:var(--dorado);letter-spacing:3px;font-size:20px}
+nav{display:flex;gap:26px;font-size:11px;letter-spacing:1.5px;font-weight:700}
+nav a{color:#aaa} nav a.active,nav a:hover{color:var(--dorado)}
+.hero{position:relative;min-height:560px;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 20px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,175,55,.08),transparent 70%)}
+.moth-watermark{position:absolute;width:600px;height:600px;left:50%;top:50%;transform:translate(-50%,-50%);opacity:.12;background:url('polilla.png') center/contain no-repeat;pointer-events:none}
+.hero-content{position:relative;z-index:2}
+.hero h1{font-family:'Cinzel',serif;font-size:clamp(42px,8vw,84px);color:var(--dorado);letter-spacing:4px;line-height:.9;text-shadow:0 4px 20px #000}
+.hero .sub{color:var(--dorado2);font-size:11px;letter-spacing:4px;margin-top:12px;font-weight:700}
+.hero .frase{font-family:'Caveat',cursive;color:#e8d9a0;font-size:28px;margin-top:24px;transform:rotate(-3deg)}
+section{max-width:1100px;margin:auto;padding:70px 22px}
+.doble{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.tit{color:var(--dorado);font-size:12px;letter-spacing:3px;font-weight:700;border-left:2px solid var(--dorado);padding-left:10px;margin-bottom:12px}
+.doble p{color:var(--gris);font-size:14px;line-height:1.8}
+.btn{display:inline-block;margin-top:14px;padding:10px 18px;border:1px solid var(--dorado);color:var(--dorado);font-size:11px;font-weight:700;letter-spacing:1px}
+.btn:hover{background:var(--dorado);color:#000}
+.lanzamiento{border:1px solid rgba(212,175,55,.6);background:linear-gradient(135deg,#1a160a,#080808);display:grid;grid-template-columns:260px 1fr;gap:20px;padding:20px;align-items:center}
+.lanzamiento img{width:100%;aspect-ratio:1/1;object-fit:cover;border:1px solid var(--dorado)}
+.pill{display:inline-block;border:1px solid var(--dorado);color:var(--dorado);padding:6px 12px;font-size:10px;letter-spacing:1.5px;margin:10px 0}
+.grid-musica{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:20px}
+.card{background:#111;border:1px solid rgba(212,175,55,.3);padding:14px;transition:.25s}
+.card:hover{border-color:var(--dorado);transform:translateY(-3px)}
+.card h4{font-size:13px;margin-bottom:4px}
+.card p{font-size:11px;color:var(--dorado)}
+.redes{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.red{border:1px solid rgba(212,175,55,.5);padding:12px 18px;font-size:11px;font-weight:700}
+footer{text-align:center;padding:30px;color:#777;font-size:11px;border-top:1px solid rgba(212,175,55,.2);display:flex;flex-direction:column;align-items:center;gap:8px}
+footer img{width:32px;opacity:.8}
+@media(max-width:800px){.doble,.lanzamiento{grid-template-columns:1fr}.grid-musica{grid-template-columns:1fr 1fr}}
+</style>
 </head>
-
 <body>
 
-  <div class="fondo"></div>
-  <div class="brillo"></div>
-
-  <!-- NAVEGACIÓN -->
-
-  <nav class="navegacion" aria-label="Navegación principal">
-    <div class="nav-contenido">
-      <a href="#inicio">INICIO</a>
-      <a href="#artista">EL ARTISTA</a>
-      <a href="#lanzamiento">LANZAMIENTO</a>
-      <a href="#musica">MÚSICA</a>
-      <a href="#redes">REDES</a>
-    </div>
+<header>
+  <div class="logo">
+    <img src="polilla.png" alt="Logo Metamorfosis">
+    <b>METAMORFOSIS</b>
+  </div>
+  <nav>
+    <a class="active" href="#inicio">INICIO</a>
+    <a href="#musica">MI MÚSICA</a>
+    <a href="#sobre">SOBRE MÍ</a>
+    <a href="#redes">SÍGUEME</a>
   </nav>
+</header>
 
-  <!-- PORTADA PRINCIPAL -->
+<div class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="moth-watermark"></div>
+  <div class="hero-content">
+    <h1>METAMORFOSIS</h1>
+    <div class="sub">ARTISTA URBANO — RAP • TRAP • REGGAE • REGUETÓN</div>
+    <div class="frase">La vida también es una canción..</div>
+  </div>
+</div>
 
-  <header id="inicio">
-    <div class="sobrelinea">ARTISTA INDEPENDIENTE</div>
+<section class="doble" id="sobre">
+  <div>
+    <div class="tit">BIENVENIDO</div>
+    <p>Bienvenido al espacio oficial de Metamorfosis. Música, historias y experiencias convertidas en arte. Rap conciencia, emociones y realidad desde una perspectiva propia.</p>
+    <a class="btn" href="#musica">CONOCE MÁS</a>
+  </div>
+  <div>
+    <div class="tit">SOBRE METAMORFOSIS</div>
+    <p>Metamorfosis es un artista que utiliza la música como forma de expresar experiencias, sentimientos y situaciones de la vida. Su propuesta mezcla rap, hip hop y diferentes influencias urbanas. La polilla representa la transformación.</p>
+    <a class="btn" href="#sobre">MI HISTORIA</a>
+  </div>
+</section>
 
-    <h1>METAMORFOSIS <span class="numero">1998</span></h1>
-
-    <div class="linea-dorada"></div>
-
-    <div class="artist">
-      RAP · TRAP · REGGAE · REGUETÓN
+<section>
+  <div class="lanzamiento">
+    <img src="ojos-bellos.jpeg" alt="Ojos Bellos">
+    <div>
+      <div class="tit">🔥 NUEVO LANZAMIENTO</div>
+      <h2 style="font-family:Cinzel;font-size:38px;color:#fff">OJOS BELLOS</h2>
+      <div class="pill">YA DISPONIBLE</div>
+      <p style="color:#b8b8b8;font-size:13px;margin-top:10px">Ojos Bellos ya está disponible en Spotify. Escucha mi nuevo lanzamiento y acompáñame en esta nueva etapa de Metamorfosis.</p>
+      <a class="btn" style="background:var(--dorado);color:#000" href="https://open.spotify.com/track/5BufG6kl8q5yPLpegXrdyB" target="_blank">ESCUCHAR EN SPOTIFY</a>
     </div>
-
-    <p class="frase-portada">
-      Música, calle, sentimientos y realidad. Una historia contada desde mi propia voz.
-    </p>
-
-    <div class="botones-portada">
-      <a
-        class="boton boton-principal"
-        href="#musica"
-      >
-        ESCUCHAR MI MÚSICA
-      </a>
-
-      <a
-        class="boton"
-        href="https://open.spotify.com/artist/64k1DjjClkLbkeYwxROdtv"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        MI SPOTIFY
-      </a>
-    </div>
-  </header>
-
-  <!-- PRESENTACIÓN DEL ARTISTA -->
-
-  <section id="artista">
-
-    <div class="encabezado-seccion">
-      <div class="etiqueta">DETRÁS DE LA MÚSICA</div>
-      <h2>EL ARTISTA</h2>
-      <div class="subrayado"></div>
-    </div>
-
-    <div class="perfil-contenedor">
-
-      <!-- ESPACIO RESERVADO PARA TU FOTOGRAFÍA REAL -->
-
-      <div class="espacio-foto">
-        <div class="simbolo-foto">✦</div>
-        <strong>METAMORFOSIS 1998</strong>
-        <span>Espacio reservado para una fotografía del artista</span>
-      </div>
-
-      <div class="perfil-texto">
-        <h2>Una voz. Una historia. Una transformación.</h2>
-
-        <p>
-          Metamorfosis utiliza la música para transformar experiencias,
-          emociones y realidades en canciones que cuentan historias.
-        </p>
-
-        <p>
-          Su propuesta conecta el rap consciente con sonidos urbanos,
-          el trap, el reggae y el reguetón, manteniendo una identidad
-          propia y una mirada personal sobre la vida.
-        </p>
-
-        <p>
-          Cada canción es una parte del camino: lo vivido, lo aprendido
-          y todo aquello que todavía queda por expresar.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LANZAMIENTO -->
-
-  <section id="lanzamiento" class="lanzamiento">
-
-    <div class="lanzamiento-label">NUEVA MÚSICA</div>
-
-    <h2>OJOS BELLOS</h2>
-
-    <img
-      src="ojos-bellos.jpeg"
-      alt="Portada del lanzamiento Ojos Bellos de Metamorfosis"
-      class="portada-lanzamiento"
-      loading="lazy"
-    >
-
-    <div class="lanzamiento-status">
-      YA DISPONIBLE
-    </div>
-
-    <p class="lanzamiento-texto">
-      Escucha Ojos Bellos en Spotify y acompáñame en esta nueva etapa
-      musical. Gracias por apoyar mi música y formar parte del camino.
-    </p>
-
-    <a
-      href="https://open.spotify.com/track/5BufG6kl8q5yPLpegXrdyB"
-      class="spotify-lanzamiento"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      ESCUCHAR EN SPOTIFY
-    </a>
-
-  </section>
-
-  <!-- CATÁLOGO MUSICAL -->
-
-  <section id="musica">
-
-    <div class="encabezado-seccion">
-      <div class="etiqueta">EL SONIDO DE METAMORFOSIS</div>
-      <h2>MI MÚSICA</h2>
-      <div class="subrayado"></div>
-    </div>
-
-    <p class="texto-centro">
-      Canciones que nacen de distintas experiencias, emociones y etapas.
-      Escucha los lanzamientos y descubre mi propuesta musical.
-    </p>
-
-    <div class="canciones-grid">
-
-      <!-- STREETS -->
-
-      <article class="cancion-card">
-        <img
-          src="file_00000000a44471f5a90b00030674ca54.png"
-          alt="Portada de Streets de Metamorfosis junto a MHÜS"
-          loading="lazy"
-        >
-
-        <div class="cancion-info">
-          <h3>Streets</h3>
-          <p class="feat">Metamorfosis ft. MHÜS</p>
-
-          <a
-            href="https://open.spotify.com/track/7F0GvYyz1vtVBv5LfRuD8B"
-            class="btn-escuchar"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ESCUCHAR ↗
-          </a>
-        </div>
-      </article>
-
-      <!-- MELANCOLÍA -->
-
-      <article class="cancion-card">
-        <img
-          src="20250213_125116_661.jpg"
-          alt="Portada de Melancolía"
-          loading="lazy"
-        >
-
-        <div class="cancion-info">
-          <h3>Melancolía</h3>
-          <p class="feat">Single</p>
-
-          <a
-            href="https://open.spotify.com/track/598Wp5o75WhZYg8AcblgcO"
-            class="btn-escuchar"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ESCUCHAR ↗
-          </a>
-        </div>
-      </article>
-
-      <!-- APROVECHA TU PARTIDA -->
-
-      <article class="cancion-card">
-        <img
-          src="20240919_155854_983.jpg"
-          alt="Portada de Aprovecha tu partida"
-          loading="lazy"
-        >
-
-        <div class="cancion-info">
-          <h3>Aprovecha tu partida</h3>
-          <p class="feat">Single</p>
-
-          <a
-            href="https://open.spotify.com/track/0a5YIKEQbeSIiXy1mdbxfS"
-            class="btn-escuchar"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ESCUCHAR ↗
-          </a>
-        </div>
-      </article>
-
-      <!-- SIN CASCO -->
-
-      <article class="cancion-card">
-        <img
-          src="20240822_225049_287.jpg"
-          alt="Portada de Sin Casco"
-          loading="lazy"
-        >
-
-        <div class="cancion-info">
-          <h3>Sin Casco</h3>
-          <p class="feat">Single</p>
-
-          <a
-            href="https://open.spotify.com/track/75IzDd13WtRXxHhPQjuPK7"
-            class="btn-escuchar"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ESCUCHAR ↗
-          </a>
-        </div>
-      </article>
-
-      <!-- NIÑOS ACELERADOS -->
-
-      <article class="cancion-card">
-        <img
-          src="20240523_162543_069.jpg"
-          alt="Portada de Niños Acelerados"
-          loading="lazy"
-        >
-
-        <div class="cancion-info">
-          <h3>Niños Acelerados</h3>
-          <p class="feat">Single</p>
-
-          <a
-            href="https://open.spotify.com/track/7gQDoBBx5cG0HFbOCExFtX"
-            class="btn-escuchar"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ESCUCHAR ↗
-          </a>
-        </div>
-      </article>
-
-    </div>
-
-    <p class="nota-musica">
-      Escucha los temas completos a través de Spotify.
-    </p>
-
-  </section>
-
-  <!-- REDES SOCIALES -->
-
-  <section id="redes" class="redes">
-
-    <div class="encabezado-seccion">
-      <div class="etiqueta">SIGUE EL MOVIMIENTO</div>
-      <h2>CONÉCTATE</h2>
-      <div class="subrayado"></div>
-    </div>
-
-    <p class="redes-texto">
-      Sígueme en redes sociales para descubrir nueva música,
-      próximos lanzamientos y contenido de Metamorfosis.
-    </p>
-
-    <div class="redes-grid">
-
-      <a
-        class="red-social"
-        href="https://www.instagram.com/metamorfosis_1998/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        INSTAGRAM ↗
-      </a>
-
-      <a
-        class="red-social"
-        href="https://www.tiktok.com/@metamorfosis1998"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        TIKTOK ↗
-      </a>
-
-      <a
-        class="red-social"
-        href="https://www.facebook.com/share/1V2AJr9BsS/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        FACEBOOK ↗
-      </a>
-
-      <a
-        class="red-social"
-        href="https://youtube.com/@metamorfosis1998"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        YOUTUBE ↗
-      </a>
-
-    </div>
-
-    <div class="spotify-artista">
-      <a
-        class="boton"
-        href="https://open.spotify.com/artist/64k1DjjClkLbkeYwxROdtv"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ESCUCHA MI PERFIL EN SPOTIFY ↗
-      </a>
-    </div>
-
-  </section>
-
-  <!-- PIE DE PÁGINA -->
-
-  <footer>
-    <p>
-      © 2026 <strong>METAMORFOSIS 1998</strong>
-    </p>
-    <p>Todos los derechos reservados.</p>
-  </footer>
+  </div>
+</section>
+
+<section id="musica">
+  <div class="tit">MI MÚSICA</div>
+  <div class="grid-musica">
+    <div class="card"><h4>STREETS</h4><p>ft MHÜS</p><a class="btn" href="https://open.spotify.com/track/7F0GvYyz1vtVBv5LfRuD8B" target="_blank">ESCUCHAR</a></div>
+    <div class="card"><h4>MELANCOLÍA</h4><p>Single</p><a class="btn" href="https://open.spotify.com/track/598Wp5o75WhZYg8AcblgcO" target="_blank">ESCUCHAR</a></div>
+    <div class="card"><h4>APROVECHA TU PARTIDA</h4><p>Single</p><a class="btn" href="https://open.spotify.com/track/0a5YIKEQbeSIiXy1mdbxfS" target="_blank">ESCUCHAR</a></div>
+    <div class="card"><h4>SIN CASCO</h4><p>Single</p><a class="btn" href="https://open.spotify.com/track/75IzDd13WtRXxHhPQjuPK7" target="_blank">ESCUCHAR</a></div>
+    <div class="card"><h4>NIÑOS ACELERADOS</h4><p>Single</p><a class="btn" href="https://open.spotify.com/track/7gQDoBBx5cG0HFbOCExFtX" target="_blank">ESCUCHAR</a></div>
+  </div>
+</section>
+
+<section id="redes" style="text-align:center;border-top:1px solid rgba(212,175,55,.2)">
+  <div class="tit" style="justify-content:center;display:flex">SÍGUEME</div>
+  <div class="redes">
+    <a class="red" href="https://www.instagram.com/metamorfosis_1998/" target="_blank">INSTAGRAM</a>
+    <a class="red" href="https://www.tiktok.com/@metamorfosis1998" target="_blank">TIKTOK</a>
+    <a class="red" href="https://www.facebook.com/share/1V2AJr9BsS/" target="_blank">FACEBOOK</a>
+    <a class="red" href="https://youtube.com/@metamorfosis1998" target="_blank">YOUTUBE</a>
+  </div>
+</section>
+
+<footer>
+  <img src="polilla.png" alt="polilla">
+  <div>© 2026 <b style="color:var(--dorado)">METAMORFOSIS</b> — POLILLA EDITION</div>
+</footer>
 
 </body>
-</html>
+  </html>

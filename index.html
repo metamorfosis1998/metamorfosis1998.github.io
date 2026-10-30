@@ -1,18 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>METAMORFOSIS | Artista Urbano Oficial</title>
+  <title>Metamorfosis | Artista Urbano Oficial</title>
   <meta name="description" content="Página oficial de Metamorfosis. Compositor, productor musical, tatuador, barbero y artista plástico. Rap conciencia, trap, reggae y reguetón.">
   <meta name="theme-color" content="#080808">
 
   <style>
     :root {
-      --negro: #080808;
-      --negro-card: #111111;
+      --negro: #050505;
+      --negro-card: #101010;
       --dorado: #d4af37;
       --dorado-claro: #f2d675;
       --blanco: #f5f5f5;
@@ -30,9 +29,19 @@
     }
 
     body {
+      position: relative;
+      isolation: isolate;
       background-color: var(--negro);
       background-image:
-        linear-gradient(rgba(8,8,8,.72), rgba(8,8,8,.88)),
+        radial-gradient(ellipse at center,
+          rgba(0,0,0,.97) 0%,
+          rgba(0,0,0,.91) 45%,
+          rgba(0,0,0,.65) 100%),
+        linear-gradient(90deg,
+          rgba(212,175,55,.09),
+          transparent 25%,
+          transparent 75%,
+          rgba(212,175,55,.09)),
         url('file_00000000413081f595f3de990434c9a9.png');
       background-position: center top;
       background-size: cover;
@@ -40,38 +49,57 @@
       background-repeat: no-repeat;
       color: var(--blanco);
       font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
+      line-height: 1.7;
       overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at left top,
+          rgba(212,175,55,.13), transparent 35%),
+        radial-gradient(ellipse at right bottom,
+          rgba(212,175,55,.12), transparent 35%),
+        linear-gradient(90deg,
+          rgba(0,0,0,.08),
+          rgba(0,0,0,.65) 35%,
+          rgba(0,0,0,.65) 65%,
+          rgba(0,0,0,.08));
     }
 
     /* ENCABEZADO */
 
     header {
-      min-height: 340px;
+      min-height: 360px;
       padding: 75px 20px 65px;
       text-align: center;
-      background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,.55),
-        rgba(8,8,8,.75)
-      );
-      border-bottom: 1px solid rgba(212,175,55,.35);
+      background:
+        linear-gradient(to bottom,
+          rgba(0,0,0,.45),
+          rgba(0,0,0,.80));
+      border-bottom: 1px solid rgba(212,175,55,.4);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      position: relative;
     }
 
     h1 {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(2.2rem, 8vw, 5.2rem);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(2.4rem, 8vw, 5.5rem);
       font-weight: 900;
       letter-spacing: 5px;
       line-height: 1.3;
-      color: var(--dorado);
+      color: var(--dorado-claro);
       text-shadow:
         0 2px 2px #5c4510,
-        0 0 12px rgba(212,175,55,.35);
+        0 0 12px rgba(212,175,55,.35),
+        0 0 35px rgba(212,175,55,.18);
     }
 
     .subtitulo {
@@ -83,9 +111,10 @@
     }
 
     .linea-dorada {
-      width: 100px;
+      width: 110px;
       height: 2px;
-      background: var(--dorado);
+      background: linear-gradient(90deg,
+        transparent, var(--dorado), transparent);
       margin: 25px auto 0;
       box-shadow: 0 0 12px rgba(212,175,55,.6);
     }
@@ -101,9 +130,9 @@
       flex-wrap: wrap;
       gap: 10px;
       padding: 13px 10px;
-      background: rgba(8,8,8,.96);
-      border-bottom: 1px solid rgba(212,175,55,.3);
-      backdrop-filter: blur(10px);
+      background: rgba(5,5,5,.96);
+      border-bottom: 1px solid rgba(212,175,55,.35);
+      backdrop-filter: blur(12px);
     }
 
     nav a {
@@ -111,12 +140,14 @@
       text-decoration: none;
       font-size: 12px;
       font-weight: 700;
+      letter-spacing: 1px;
       padding: 8px 12px;
       transition: .3s;
     }
 
     nav a:hover {
       color: var(--dorado-claro);
+      text-shadow: 0 0 10px rgba(212,175,55,.5);
     }
 
     /* CONTENIDO */
@@ -129,7 +160,7 @@
     }
 
     section {
-      padding: 65px 10px;
+      padding: 70px 10px;
       scroll-margin-top: 70px;
     }
 
@@ -137,48 +168,54 @@
       color: var(--dorado);
       font-size: 25px;
       text-align: center;
-      margin-bottom: 30px;
-      letter-spacing: 2px;
+      margin-bottom: 35px;
+      letter-spacing: 3px;
       font-weight: 800;
+      text-shadow: 0 0 15px rgba(212,175,55,.18);
     }
 
     /* INICIO Y BIOGRAFÍA */
 
     .bienvenida {
       text-align: center;
-      padding-top: 75px;
+      padding-top: 85px;
     }
 
     .bienvenida h2 {
       font-size: clamp(25px, 5vw, 38px);
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       color: var(--dorado-claro);
     }
 
     .bienvenida h3 {
       color: var(--dorado);
       font-size: 21px;
-      margin: 30px 0 15px;
+      margin: 35px 0 18px;
+      letter-spacing: 2px;
     }
 
     .bienvenida p {
       max-width: 780px;
-      margin: 0 auto 16px;
+      margin: 0 auto 18px;
       color: var(--gris);
       font-size: 16px;
       text-align: center;
     }
 
-    /* GALERÍA DEL ARTISTA */
+    /* GALERÍA */
 
     .galeria {
       max-width: 650px;
       margin: auto;
-      background: rgba(17,17,17,.94);
+      background: linear-gradient(145deg,
+        rgba(24,24,24,.97),
+        rgba(5,5,5,.97));
       border: 1px solid rgba(212,175,55,.55);
-      border-radius: 14px;
+      border-radius: 16px;
       padding: 18px;
-      box-shadow: 0 0 25px rgba(212,175,55,.12);
+      box-shadow:
+        0 0 30px rgba(212,175,55,.10),
+        0 15px 40px rgba(0,0,0,.5);
     }
 
     .galeria-foto {
@@ -188,7 +225,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      border-radius: 9px;
+      border-radius: 10px;
       background: #050505;
       touch-action: pan-y;
     }
@@ -257,28 +294,34 @@
     /* LANZAMIENTO */
 
     .lanzamiento {
-      background: linear-gradient(145deg, #151515, #090909);
+      background: linear-gradient(145deg,
+        rgba(23,23,23,.97),
+        rgba(5,5,5,.98));
       border: 1px solid rgba(212,175,55,.55);
-      border-radius: 15px;
-      padding: 30px;
+      border-radius: 17px;
+      padding: 32px;
       max-width: 800px;
       margin: auto;
       text-align: center;
-      box-shadow: 0 0 25px rgba(212,175,55,.08);
+      box-shadow: 0 0 30px rgba(212,175,55,.10);
     }
 
     .lanzamiento img {
       width: 100%;
-      max-width: 350px;
+      max-width: 390px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
       border-radius: 10px;
       border: 1px solid var(--dorado);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.5);
     }
 
     .lanzamiento h3 {
       color: var(--dorado-claro);
-      font-size: 27px;
-      margin-bottom: 8px;
+      font-size: 29px;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
     }
 
     .lanzamiento p {
@@ -289,22 +332,26 @@
     .disponible {
       display: inline-block;
       color: #080808;
-      background: var(--dorado);
-      padding: 5px 14px;
+      background: linear-gradient(135deg,
+        var(--dorado-claro), #b58a20);
+      padding: 6px 18px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: 800;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
     }
 
     /* BOTONES */
 
     .boton {
       display: inline-block;
-      background: linear-gradient(135deg, #f2d675, #b58a20);
+      background: linear-gradient(135deg,
+        #f2d675, #b58a20);
       color: #080808;
       text-decoration: none;
       font-weight: 800;
+      letter-spacing: 1px;
       padding: 12px 25px;
       border-radius: 6px;
       margin: 6px;
@@ -320,23 +367,25 @@
 
     .canciones-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit,
+        minmax(210px, 1fr));
       gap: 22px;
     }
 
     .cancion-card {
-      background: rgba(17,17,17,.94);
+      background: rgba(14,14,14,.96);
       border: 1px solid rgba(212,175,55,.35);
       border-radius: 12px;
       overflow: hidden;
       text-align: center;
       transition: .3s;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
     }
 
     .cancion-card:hover {
       transform: translateY(-5px);
       border-color: var(--dorado);
-      box-shadow: 0 8px 25px rgba(212,175,55,.12);
+      box-shadow: 0 8px 25px rgba(212,175,55,.15);
     }
 
     .cancion-card img {
@@ -412,6 +461,10 @@
     /* TELÉFONOS */
 
     @media (max-width: 600px) {
+      body {
+        background-attachment: scroll;
+      }
+
       header {
         min-height: 270px;
         padding: 55px 12px;
@@ -440,7 +493,7 @@
       }
 
       section {
-        padding: 45px 8px;
+        padding: 48px 8px;
       }
 
       .galeria {
@@ -454,11 +507,20 @@
       .lanzamiento {
         padding: 20px 12px;
       }
+
+      .titulo-seccion {
+        font-size: 22px;
+      }
     }
 
     @media (max-width: 380px) {
       .galeria-foto {
         height: 350px;
+      }
+
+      nav a {
+        font-size: 10px;
+        padding: 7px;
       }
     }
   </style>
@@ -468,7 +530,9 @@
 
   <header>
     <h1>METAMORFOSIS</h1>
-    <p class="subtitulo">ARTISTA URBANO · RAP · TRAP · REGGAE · REGUETÓN</p>
+    <p class="subtitulo">
+      ARTISTA URBANO · RAP · TRAP · REGGAE · REGUETÓN
+    </p>
     <div class="linea-dorada"></div>
   </header>
 
@@ -533,6 +597,7 @@
         </div>
 
         <div class="galeria-controles">
+
           <button
             type="button"
             class="galeria-boton"
@@ -552,54 +617,59 @@
             aria-label="Fotografía siguiente">
             &#8250;
           </button>
+
         </div>
 
         <div class="galeria-puntos" id="galeriaPuntos">
-          <button class="galeria-punto activo" type="button" aria-label="Ver foto 1"></button>
-          <button class="galeria-punto" type="button" aria-label="Ver foto 2"></button>
-          <button class="galeria-punto" type="button" aria-label="Ver foto 3"></button>
-          <button class="galeria-punto" type="button" aria-label="Ver foto 4"></button>
+          <button class="galeria-punto activo" type="button"
+            aria-label="Ver foto 1"></button>
+          <button class="galeria-punto" type="button"
+            aria-label="Ver foto 2"></button>
+          <button class="galeria-punto" type="button"
+            aria-label="Ver foto 3"></button>
+          <button class="galeria-punto" type="button"
+            aria-label="Ver foto 4"></button>
         </div>
 
       </div>
     </section>
 
-    <!-- NUEVO LANZAMIENTO -->
+    <!-- PRÓXIMO LANZAMIENTO: GORGOJO -->
 
     <section id="lanzamiento">
-      <h2 class="titulo-seccion">NUEVO LANZAMIENTO</h2>
+
+      <h2 class="titulo-seccion">PRÓXIMAMENTE</h2>
 
       <div class="lanzamiento">
 
-        <span class="disponible">YA DISPONIBLE</span>
+        <span class="disponible">NUEVO LANZAMIENTO</span>
 
-        <img src="ojos-bellos.jpeg" alt="Portada de Ojos Bellos">
+        <img
+          src="Gorgojo_5000x5000_RGB(1).jpg"
+          alt="Portada del próximo lanzamiento Gorgojo">
 
-        <h3>OJOS BELLOS</h3>
+        <h3>GORGOJO</h3>
 
         <p>
-          Ya disponible. Escucha el nuevo lanzamiento de Metamorfosis
-          en Spotify y acompaña este nuevo capítulo musical.
+          Muy pronto. Un nuevo capítulo musical de Metamorfosis.
+          Prepárate para descubrir este próximo lanzamiento.
         </p>
 
-        <a class="boton"
-          href="https://open.spotify.com/track/5BufG6kl8q5yPLpegXrdyB"
-          target="_blank" rel="noopener noreferrer">
-          ESCUCHAR EN SPOTIFY
-        </a>
-
       </div>
+
     </section>
 
-    <!-- MÚSICA -->
+    <!-- MÚSICA DISPONIBLE -->
 
     <section id="musica">
+
       <h2 class="titulo-seccion">MI MÚSICA</h2>
 
       <div class="canciones-grid">
 
         <div class="cancion-card">
-          <img src="file_00000000a44471f5a90b00030674ca54.png"
+          <img
+            src="file_00000000a44471f5a90b00030674ca54.png"
             alt="Portada de Streets">
           <h3>Streets</h3>
           <a href="https://open.spotify.com/track/7F0GvYyz1vtVBv5LfRuD8B"
@@ -609,7 +679,8 @@
         </div>
 
         <div class="cancion-card">
-          <img src="20250213_125116_661.jpg"
+          <img
+            src="20250213_125116_661.jpg"
             alt="Portada de Melancolía">
           <h3>Melancolía</h3>
           <a href="https://open.spotify.com/track/598Wp5o75WhZYg8AcblgcO"
@@ -619,7 +690,8 @@
         </div>
 
         <div class="cancion-card">
-          <img src="20240919_155854_983.jpg"
+          <img
+            src="20240919_155854_983.jpg"
             alt="Portada de Aprovecha tu partida">
           <h3>Aprovecha tu partida</h3>
           <a href="https://open.spotify.com/track/0a5YIKEQbeSIiXy1mdbxfS"
@@ -629,7 +701,8 @@
         </div>
 
         <div class="cancion-card">
-          <img src="20240822_225049_287.jpg"
+          <img
+            src="20240822_225049_287.jpg"
             alt="Portada de Sin Casco">
           <h3>Sin Casco</h3>
           <a href="https://open.spotify.com/track/75IzDd13WtRXxHhPQjuPK7"
@@ -639,7 +712,8 @@
         </div>
 
         <div class="cancion-card">
-          <img src="20240523_162543_069.jpg"
+          <img
+            src="20240523_162543_069.jpg"
             alt="Portada de Niños Acelerados">
           <h3>Niños Acelerados</h3>
           <a href="https://open.spotify.com/track/7gQDoBBx5cG0HFbOCExFtX"
@@ -648,20 +722,37 @@
           </a>
         </div>
 
+        <!-- OJOS BELLOS: AHORA EN EL REPERTORIO -->
+
+        <div class="cancion-card">
+          <img
+            src="ojos-bellos.jpeg"
+            alt="Portada de Ojos Bellos">
+          <h3>Ojos Bellos</h3>
+          <a href="https://open.spotify.com/track/5BufG6kl8q5yPLpegXrdyB"
+            target="_blank" rel="noopener noreferrer">
+            ESCUCHAR EN SPOTIFY
+          </a>
+        </div>
+
       </div>
 
       <div style="text-align:center; margin-top:30px;">
+
         <a class="boton"
           href="https://open.spotify.com/artist/64k1DjjClkLbkeYwxROdtv"
           target="_blank" rel="noopener noreferrer">
           VER PERFIL DE SPOTIFY
         </a>
+
       </div>
+
     </section>
 
     <!-- REDES SOCIALES -->
 
     <section id="redes" class="redes">
+
       <h2 class="titulo-seccion">SÍGUEME</h2>
 
       <p>
@@ -693,6 +784,7 @@
         target="_blank" rel="noopener noreferrer">
         SPOTIFY
       </a>
+
     </section>
 
   </main>
@@ -704,6 +796,7 @@
   <!-- FUNCIONAMIENTO DE LA GALERÍA -->
 
   <script>
+
     const fotosArtista = [
       {
         src: "para-adornar-el-fondo-de-la-pagina.jpg",
@@ -730,7 +823,9 @@
     const puntos = document.querySelectorAll(".galeria-punto");
 
     function mostrarFoto(indice) {
-      fotoActual = (indice + fotosArtista.length) % fotosArtista.length;
+
+      fotoActual =
+        (indice + fotosArtista.length) % fotosArtista.length;
 
       imagen.src = fotosArtista[fotoActual].src;
       imagen.alt = fotosArtista[fotoActual].alt;
@@ -741,15 +836,18 @@
       puntos.forEach((punto, i) => {
         punto.classList.toggle("activo", i === fotoActual);
       });
+
     }
 
-    document.getElementById("fotoAnterior").addEventListener("click", () => {
-      mostrarFoto(fotoActual - 1);
-    });
+    document.getElementById("fotoAnterior")
+      .addEventListener("click", () => {
+        mostrarFoto(fotoActual - 1);
+      });
 
-    document.getElementById("fotoSiguiente").addEventListener("click", () => {
-      mostrarFoto(fotoActual + 1);
-    });
+    document.getElementById("fotoSiguiente")
+      .addEventListener("click", () => {
+        mostrarFoto(fotoActual + 1);
+      });
 
     puntos.forEach((punto, i) => {
       punto.addEventListener("click", () => {
@@ -760,15 +858,19 @@
     /* DESLIZAR CON EL DEDO */
 
     const zonaGaleria = document.getElementById("galeriaFoto");
+
     let inicioX = 0;
     let inicioY = 0;
 
     zonaGaleria.addEventListener("touchstart", (evento) => {
+
       inicioX = evento.changedTouches[0].screenX;
       inicioY = evento.changedTouches[0].screenY;
+
     }, { passive: true });
 
     zonaGaleria.addEventListener("touchend", (evento) => {
+
       const finalX = evento.changedTouches[0].screenX;
       const finalY = evento.changedTouches[0].screenY;
 
@@ -783,10 +885,14 @@
         } else {
           mostrarFoto(fotoActual - 1);
         }
+
       }
+
     }, { passive: true });
+
   </script>
 
 </body>
 </html>
+
 
